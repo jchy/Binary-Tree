@@ -107,6 +107,15 @@ class BinaryTree {
     this.postorderTraversal(node.right);
     postorder_res += node.data;
   }
+  ifNodeExist(node = this.root, key) {
+    if (node === null) return false;
+    if (node.data === key) return true;
+    let checkLeftSubtree = this.ifNodeExist(node.left, key);
+    if (checkLeftSubtree) {
+      return true;
+    }
+    return this.ifNodeExist(node.right, key);
+  }
 }
 /* creating a binary tree and entering the nodes */
 var tree = new BinaryTree();
@@ -145,3 +154,4 @@ console.log(
   postorder_res.split("").join(" ")
 );
 console.log("Depth of the tree: ", tree.getNodeDepth());
+console.log("if", 3, "exist in binary tree : ", tree.ifNodeExist(tree, 3));
