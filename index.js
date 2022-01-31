@@ -154,4 +154,4 @@ console.log(
   postorder_res.split("").join(" ")
 );
 console.log("Depth of the tree: ", tree.getNodeDepth());
-console.log("if", 3, "exist in binary tree : ", tree.ifNodeExist(tree, 3));
+console.log("if", 3, "exist in binary tree : ", tree.ifNodeExist(tree, 101));
